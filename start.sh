@@ -113,12 +113,12 @@ if [ ! -d "$VENV_DIR" ]; then
     exit 1
 else
     print_status "Using existing virtual environment at $VENV_DIR..."
-    source "$VENV_DIR/bin/activate"
+    source "$VENV_DIR/Scripts/activate"
 fi
 
 mkdir -p storage
 
-PYTHONPATH="$SCRIPT_DIR" nohup bash -c "source \"$VENV_DIR/bin/activate\" && python -m api.main" >> "$SCRIPT_DIR/logs/api.log" 2>&1 &
+PYTHONPATH="$SCRIPT_DIR" nohup bash -c "source \"$VENV_DIR/Scripts/activate\" && python -m api.main" >> "$SCRIPT_DIR/logs/api.log" 2>&1 &
 API_PID=$!
 echo $API_PID > "$SCRIPT_DIR/logs/api.pid"
 

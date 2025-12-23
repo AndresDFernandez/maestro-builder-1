@@ -20,14 +20,14 @@ fi
 if [ ! -d "venv" ] && [ ! -d ".venv" ]; then
     echo "Setting up virtual environment..."
     python3 -m venv venv
-    source venv/bin/activate
+    source venv/Scripts/activate
     pip install -r requirements.txt
 else
     # Activate existing virtual environment
     if [ -d "venv" ]; then
-        source venv/bin/activate
+        source venv/Scripts/activate
     elif [ -d ".venv" ]; then
-        source .venv/bin/activate
+        source .venv/Scripts/activate
     fi
 fi
 
